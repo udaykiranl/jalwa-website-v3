@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Section from '../components/Section';
 import Reveal from '../components/Reveal';
 
@@ -145,6 +146,12 @@ const Terms: React.FC = () => {
 
               <h3 className="text-xl font-bold text-white mt-8 mb-4">6. CALIFORNIA PRIVACY RIGHTS</h3>
               <p>California residents have the right to know, delete, correct, and opt-out of the sale or sharing of their personal information under the CCPA.</p>
+              
+              <h3 className="text-xl font-bold text-white mt-8 mb-4">7. RIGHT TO APPEAL</h3>
+              <p>
+                Sometimes we are unable to process requests relating to your personal information, in which case, your request will be denied. 
+                If your privacy rights request has previously been denied by us and you believe we denied it in error, you may appeal for reconsideration of your request using our <Link to="/contact" className="text-jalwa-gold hover:underline">webform/contact page</Link> or by calling us.
+              </p>
 
               <h3 className="text-xl font-bold text-white mt-8 mb-4">12. CONTACT US</h3>
               <p><strong>Jalwa: Modern Indian Dining</strong></p>
@@ -166,7 +173,7 @@ const Terms: React.FC = () => {
                 <p>You have the ability to update or abandon your order at any time prior to selecting ‘Pay for Pickup’ or ‘Pay for Delivery’. Once an order is placed and confirmed by us, we begin preparing it and therefore we cannot accept cancellations of any orders once confirmed by us.</p>
                 
                 <h4 className="text-white font-bold">B. Refunds and Returns</h4>
-                <p>If you receive an order that has missing items, wrong items, or unsatisfactory items please contact us. Any provided refunds will be processed via the payment method used to place the order.</p>
+                <p>If you receive an order that has missing items, wrong items, or unsatisfactory items please <Link to="/contact" className="text-jalwa-gold hover:underline">contact us</Link>. Any provided refunds will be processed via the payment method used to place the order.</p>
               </div>
 
               <h3 className="text-xl font-bold text-white mt-8 mb-4">Delivery Policy</h3>
@@ -179,7 +186,7 @@ const Terms: React.FC = () => {
               </ul>
 
               <h3 className="text-xl font-bold text-white mt-8 mb-4">Contact Us</h3>
-              <p>If you have any questions about the delivery or your order, please contact us.</p>
+              <p>If you have any questions about the delivery or your order, please <Link to="/contact" className="text-jalwa-gold hover:underline">contact us</Link>.</p>
               <p><strong>Jalwa: Modern Indian Dining</strong></p>
               <p>(973) 250-6364</p>
               <p>jalwamcnj@gmail.com</p>

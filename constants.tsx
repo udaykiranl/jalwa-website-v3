@@ -667,6 +667,7 @@ export const MENU_ITEMS: MenuItem[] = [
     category: 'Vegetarian Entrees',
     isVegetarian: true,
     isVegan: true,
+    isGlutenFree: true,
   },
   {
     id: 've19',
@@ -1279,11 +1280,16 @@ export const CONTACT_INFO = {
   email: "info@jalwanj.com",
   reservationUrl: "https://www.opentable.com/restaurant/profile/1423882",
   hours: [
-    "Mon: Closed",
-    "Tue - Thu: 11:30 AM – 3:00 PM, 5:00 PM – 9:30 PM",
-    "Fri - Sat: 11:30 AM – 3:00 PM, 5:00 PM – 10:00 PM",
-    "Sun: 12:00 PM – 3:00 PM, 5:00 PM – 9:30 PM"
-  ]
+    "Mon - Thu: 11:30 AM – 3:00 PM, 5:00 PM – 10:15 PM",
+    "Fri - Sat: 11:30 AM – 3:00 PM, 5:00 PM – 10:30 PM",
+    "Sun: 11:30 AM – 3:00 PM, 5:00 PM – 9:15 PM"
+  ],
+  socials: {
+    instagram: "https://www.instagram.com/jalwa_montclair/",
+    facebook: "https://www.facebook.com/JalwaModernIndianDining/",
+    x: "https://x.com/JalwaMontclair",
+    tiktok: "https://www.tiktok.com/@jalwamontclair"
+  }
 };
 
 export const PARTY_TRAY_ITEMS = [

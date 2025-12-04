@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Facebook, Instagram, Phone, MapPin, Mail } from 'lucide-react';
+import { Facebook, Instagram, Phone, MapPin, Mail, Twitter, Video } from 'lucide-react';
 import { CONTACT_INFO } from '../constants';
 
 const Footer: React.FC = () => {
@@ -12,17 +12,47 @@ const Footer: React.FC = () => {
           
           {/* Brand */}
           <div className="space-y-6">
-            <h2 className="text-3xl font-serif font-bold text-jalwa-gold">JALWA</h2>
+            <h2 className="text-3xl font-serif font-bold text-jalwa-gold">Jalwa</h2>
             <p className="text-gray-400 leading-relaxed text-sm">
               A symphony of authentic spices and modern presentation. 
               Experience the evolution of Indian cuisine in the heart of Montclair.
             </p>
             <div className="flex space-x-4">
-              <a href="#" aria-label="Follow us on Instagram" className="p-2 bg-neutral-800 rounded-full hover:bg-jalwa-gold hover:text-black transition-colors">
+              <a 
+                href={CONTACT_INFO.socials.instagram} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                aria-label="Follow us on Instagram" 
+                className="p-2 bg-neutral-800 rounded-full hover:bg-jalwa-gold hover:text-black transition-colors"
+              >
                 <Instagram size={18} />
               </a>
-              <a href="#" aria-label="Follow us on Facebook" className="p-2 bg-neutral-800 rounded-full hover:bg-jalwa-gold hover:text-black transition-colors">
+              <a 
+                href={CONTACT_INFO.socials.facebook} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                aria-label="Follow us on Facebook" 
+                className="p-2 bg-neutral-800 rounded-full hover:bg-jalwa-gold hover:text-black transition-colors"
+              >
                 <Facebook size={18} />
+              </a>
+              <a 
+                href={CONTACT_INFO.socials.x} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                aria-label="Follow us on X (Twitter)" 
+                className="p-2 bg-neutral-800 rounded-full hover:bg-jalwa-gold hover:text-black transition-colors"
+              >
+                <Twitter size={18} />
+              </a>
+              <a 
+                href={CONTACT_INFO.socials.tiktok} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                aria-label="Follow us on TikTok" 
+                className="p-2 bg-neutral-800 rounded-full hover:bg-jalwa-gold hover:text-black transition-colors"
+              >
+                <Video size={18} />
               </a>
             </div>
           </div>
@@ -66,7 +96,7 @@ const Footer: React.FC = () => {
               <li><Link to="/catering" className="hover:text-jalwa-gold transition-colors">Catering Services</Link></li>
               <li><Link to="/about" className="hover:text-jalwa-gold transition-colors">Our Story</Link></li>
               <li><Link to="/gallery" className="hover:text-jalwa-gold transition-colors">Gallery</Link></li>
-              <li><a href="#" className="hover:text-jalwa-gold transition-colors">Gift Cards</a></li>
+              <li><Link to="/contact" className="hover:text-jalwa-gold transition-colors">Gift Cards</Link></li>
             </ul>
           </div>
         </div>

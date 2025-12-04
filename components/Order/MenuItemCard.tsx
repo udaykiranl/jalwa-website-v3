@@ -37,6 +37,7 @@ const MenuItemCard: React.FC<MenuItemCardProps> = ({ item, index }) => {
         <img 
           src={imageSrc} 
           alt={item.name}
+          loading="lazy"
           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
         />
         <div className="absolute top-3 right-3 flex gap-1">
