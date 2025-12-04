@@ -1,6 +1,6 @@
 
 import React, { useEffect } from 'react';
-import { HashRouter, Routes, Route, useLocation } from 'react-router-dom';
+import { HashRouter, Routes, Route, useLocation, useNavigate, Navigate } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
@@ -16,11 +16,22 @@ import Terms from './pages/Terms';
 import ChatWidget from './components/ChatWidget';
 import { CartProvider } from './context/CartContext';
 
-const ScrollToTop = () => {
+// Component to handle routing side-effects
+const AppRouteHandler = () => {
   const { pathname } = useLocation();
+  const navigate = useNavigate();
+
+  // Scroll to top on route change
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [pathname]);
+
+  // Force redirect to Home on initial app load/refresh
+  // This ensures the app always starts at the landing page, ignoring previous URL hashes
+  useEffect(() => {
+    navigate('/', { replace: true });
+  }, []); // Empty dependency array ensures this runs only once when the app mounts
+
   return null;
 };
 
@@ -28,7 +39,7 @@ const App: React.FC = () => {
   return (
     <CartProvider>
       <HashRouter>
-        <ScrollToTop />
+        <AppRouteHandler />
         <div className="flex flex-col min-h-screen bg-jalwa-black text-jalwa-cream font-sans overflow-x-hidden selection:bg-jalwa-gold selection:text-black">
           <Navbar />
           <main className="flex-grow">
@@ -43,6 +54,8 @@ const App: React.FC = () => {
               <Route path="/order" element={<Order />} />
               <Route path="/checkout" element={<Checkout />} />
               <Route path="/terms" element={<Terms />} />
+              {/* Catch-all route to redirect to Home */}
+              <Route path="*" element={<Navigate to="/" replace />} />
             </Routes>
           </main>
           <Footer />
