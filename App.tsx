@@ -14,6 +14,7 @@ import Order from './pages/Order';
 import Checkout from './pages/Checkout';
 import Terms from './pages/Terms';
 import ChatWidget from './components/ChatWidget';
+import VoiceCallButton from './components/VoiceCallButton';
 import { CartProvider } from './context/CartContext';
 
 // Component to handle routing side-effects
@@ -59,6 +60,7 @@ const App: React.FC = () => {
             </Routes>
           </main>
           <Footer />
+          <VoiceCallButton />
           <ChatWidget />
         </div>
       </HashRouter>
